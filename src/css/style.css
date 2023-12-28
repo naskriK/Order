@@ -69,6 +69,131 @@
   --color-plan-background: hsl(230, 75%, 98%);
 }
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--primary-ff);
+}
+
+.main {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  background-image: url("./../assets/images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  --width: 30rem;
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.order {
+  overflow: hidden;
+  border-radius: 11px;
+  background-color: var(--color-neutral);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.order__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 3rem;
+}
+
+.order__title {
+  color: var(--color-heading);
+  font-size: 1.75rem;
+}
+
+.order__description {
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.plan {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--color-plan-background);
+  border-radius: 11px;
+  margin-bottom: 1rem;
+}
+
+.plan__title {
+  font-size: 0.833rem;
+  color: var(--color-heading);
+}
+
+.plan__value {
+  font-size: 0.833rem;
+  color: var(--color-text);
+}
+
+.order__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.link--plan:link,
+.link--plan:visited {
+  text-decoration: underline;
+  font-size: 0.833rem;
+  margin-left: auto;
+}
+
+.link--payment:link,
+.link--payment:visited {
+  width: 100%;
+  font-size: 0.833rem;
+  color: var(--color-neutral);
+  background-color: var(--color-primary);
+  border-radius: 11px;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  padding: 1rem 1.5rem;
+}
+
+.link--cancel:link,
+.link--cancel:visited {
+  width: fit-content;
+  font-size: 0.833rem;
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.order__image {
+  width: 100%;
+}
+
+@media (max-width: 25rem) {
+  .order__content {
+    padding: 1rem;
+  }
 }
